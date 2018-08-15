@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>The Land LitRPG Game</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/phaser@3.11/dist/phaser.js"></script>
+		<script type="text/javascript" src="/js/Character.js"></script>
+    </head>
+    <body>
+        TEST
+        <script>
+            $(document).ready(function() {
+                var character = new Character();
+                console.log(character);
+                console.log(character.addExperience(0));
+
+                for(var i = 0; i < 356; i++) {
+                    var results = character.addExperience(1000);
+                    if(results.hasLeveledUp) {
+                        console.log(results);
+                    }
+                }
+
+                console.log(character);
+                
+    
+
+                /*
+                var human = new Human();
+                human.increaseLevelByOne();
+                console.log(human);
+
+                var chaosSeed = new ChaosSeed();
+                chaosSeed.increaseLevelByOne();
+                console.log(chaosSeed);
+
+
+                chaosSeed.Attributes.Agility.value = 10;
+                chaosSeed.Attributes.Charisma.value = 10;
+                chaosSeed.Attributes.Constitution.value = 10;
+                chaosSeed.Attributes.Dexterity.value = 10;
+                chaosSeed.Attributes.Endurance.value = 10;
+                chaosSeed.Attributes.Intelligence.value = 10;
+                chaosSeed.Attributes.Luck.value = 10;
+                chaosSeed.Attributes.Strength.value = 10;
+                */
+            });
+        </script>
+    </body>
+</html>
