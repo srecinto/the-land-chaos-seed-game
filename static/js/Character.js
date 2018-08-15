@@ -92,28 +92,16 @@ class Character {
         if (level > 0) {
 
             var levelAdjustment = 0;
-
             var tenthOfLevel = (level / 10);
-            //var ceilOfLevelOffset = Math.ceil(tenthOfLevel);
             var floorOfLevelOffset = Math.floor(tenthOfLevel);
-            //console.log("floorOfLevelOffset: " + floorOfLevelOffset);
 
-            /*if(ceilOfLevelOffset > 0) {
-               levelAdjustment = 1000 * Math.pow(2, ceilOfLevelOffset);
-            }*/
             if(floorOfLevelOffset > 0) {
-                //console.log("floorOfLevelOffset: " + Math.pow(2, floorOfLevelOffset -1));
                 levelAdjustment = 1000 * Math.pow(2, floorOfLevelOffset -1);
                 levelAdjustment += (level % 10) * 1000;
             }
             var cumulativeSum = (level * 1000);
 
             previousTotalXP = this.getLevelExpCap(level - 1) + cumulativeSum + levelAdjustment;
-            //var levelFraction = Math.floor(level / 10);
-            //var levelAdditive = 1000 * (Math.pow(2, levelFraction));
-            //var levelCalc = ((level -1) * 1000) + levelAdditive;
-
-            //previousTotalXP = this.getLevelExpCap(level - 1) + levelCalc;
         }
 
         return previousTotalXP;
